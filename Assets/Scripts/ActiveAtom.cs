@@ -108,7 +108,7 @@ public class ActiveAtom : MonoBehaviour
         if (!directionLocked) return;
 
         // Second tap anywhere fires
-        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
+        if (Input.GetMouseButtonUp(0))
         {
             int frequency = (int)resonanceSlider.value;
             if (frequency <= 0) return;
