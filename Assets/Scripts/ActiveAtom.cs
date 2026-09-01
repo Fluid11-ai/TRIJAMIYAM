@@ -35,7 +35,7 @@ public class ActiveAtom : MonoBehaviour
         fireCooldownWait = new WaitForSeconds(0.5f);
 
         rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.FreezePositionZ;
+        rb.constraints = RigidbodyConstraints.FreezePositionY;
         rb.isKinematic = false;
 
         resonanceSlider.value = 0;
@@ -108,7 +108,7 @@ public class ActiveAtom : MonoBehaviour
         if (!directionLocked) return;
 
         // Second tap anywhere fires
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonDown(0))
         {
             int frequency = (int)resonanceSlider.value;
             if (frequency <= 0) return;
